@@ -11,3 +11,4 @@ https://www.psaudio.com/copper/article/sample-rate-conversion/
 
 https://github.com/ExtremeElectronics/SP0256-AL2-Pico-Emulation-Detail
 
+https://www.foo.be/docs/tpj/issues/vol5_3/tpj0503-0002.html
