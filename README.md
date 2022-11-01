@@ -13,4 +13,4 @@ https://github.com/ExtremeElectronics/SP0256-AL2-Pico-Emulation-Detail
 
 https://www.foo.be/docs/tpj/issues/vol5_3/tpj0503-0002.html
 
-https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.ploytec.com/pl2/pl02_56_release_notes.pdf&ved=2ahUKEwj_t_7Mpoz7AhX3QkEAHbTRCgcQFnoECEoQAQ&usg=AOvVaw20V3RzzVQ6sqCTe1nyEzuP
+https://www.ploytec.com/pl2/pl02_56_release_notes.pdf
