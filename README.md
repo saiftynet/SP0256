@@ -13,3 +13,5 @@ https://www.foo.be/docs/tpj/issues/vol5_3/tpj0503-0002.html
 [PLOYTEC](https://www.ploytec.com/pl2/pl02_56_release_notes.pdf) has a useful dictionary and gives a good insight on how to maximise 
 
 [p5-NRL-TextToPhoneme](https://github.com/greg-kennedy/p5-NRL-TextToPhoneme) by Greg Kennedy 
+
+[Original ROMs](https://k1.spdns.de/Vintage/Sinclair/82/Peripherals/Currah%20uSpeech/Technical%20Information/)
