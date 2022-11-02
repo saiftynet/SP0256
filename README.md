@@ -15,3 +15,5 @@ This modulino includes a transformation engine that translates text to allpphone
 [p5-NRL-TextToPhoneme](https://github.com/greg-kennedy/p5-NRL-TextToPhoneme) by Greg Kennedy 
 
 [Original ROMs](https://k1.spdns.de/Vintage/Sinclair/82/Peripherals/Currah%20uSpeech/Technical%20Information/)
+
+[Allophonic Rules](https://youtu.be/vaRTzIoEp9k)
