@@ -14,6 +14,8 @@ Why do things again that far cleverer people have already done, with far more ad
 
 Now I did make a [Piano-like monophonic player](https://github.com/saiftynet/piano) (Enable the sound in the embedded video sample to hear), based on a memory of a similar utility I saw many years ago. Most web examples use /dev/dsp for audio transfer to the output device, but this virtual interface no longer exists.  A pipe to padsp does allow the emulation of /dev/dsp, and this is what I have used for Linux OS; Win32::Sound has a Windows equivalent of a sink for the raw audio data.
 
+[SP0256.webm](https://user-images.githubusercontent.com/34284663/199564715-6f7166c4-04fb-4ff9-876b-60613887959c.webm)
+
 ### Emulation
 
 The classic method for emulation of this appears (as far as I can tell) appears to be record the sounds output from the chip, sampling at much higher frequencies than is output (effectively adding a high pass filter).  This results in errors and distortions.  Such converted data is available as WAV files, and do not have any of the analog filtering that is performed on the original chip, this is actually much lower in quality that the original.  But borrowing this data from various soiurces eneables some semblance of a speech synthesiser, and this modulino represents an early attempt at using unprocessed wave forms. But these wave form are not only innaccurate and noisy compared to the sounds that cane from my 40 year old ZX Spectrum, they take significantly more memory.  The unpacked data in a script ttook 1/2 MB and packed into a Storable file, still take just under 100kb.  Can't see my Speccy being too impressed.
