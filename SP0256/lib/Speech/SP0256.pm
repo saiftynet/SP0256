@@ -16,7 +16,6 @@ unless (caller){
 	      "  ***************************************************************\n\n",
 	      "   Enter words to speak;\n   Allophones may be passed as /XX/ e.g. /PP/ /ER1/ /LL/:\n\n" ;
 
-    sleep 10;
 	$chip->speak("hello");
 	print "\n";
 	my $input="";
