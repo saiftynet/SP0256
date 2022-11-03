@@ -3,12 +3,17 @@ package Speech::SP0256::Rules;
 sub setRules{
 	my ($self)=@_;
 	$self->{rules}=[
-       ["ght"   , "TT1"  ],
-	   ["dge\$" , "JH"   ],
-	   ["^i\$"  , "AY"   ],
+	   ["dge\$", "JH"    ],
+	   ["le\$" ,  "EL"   ],
+	   ["^i\$" , "AY"    ],
 	   ["^un"  , "AA NN" ],
+       ["ght"  , "TT1"   ],
 	   ["age"  ,  "EY JH"],
-
+	   ["ck"   ,  "KK"   ],
+	   ["ch"   , "CH"    ],
+	   ["ng"   ,  "NG"   ],
+	   ["ea"   ,  "Ih IH"],
+	   ["^d"   ,  "DD2"  ],
 	   
 	   # for those that don't fit, the remaining letters are
 	   # directly translated
