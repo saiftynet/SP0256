@@ -1,0 +1,4 @@
+v 0.01  : 2022-11-02  Initial experimental release, with blog and reddit announcement
+v 0.02  : 2022-11-03  Increase dictionary size with numbers, weekdays and months
+                      Allow integers upto 10**10-1 to be spoken
+                      start populating some rules
