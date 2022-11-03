@@ -30,7 +30,7 @@ unless (caller){
 package Speech::SP0256;
 use strict; use warnings;
 use lib "../../lib";
-our $VERSION=0.01;
+our $VERSION=0.02;
 use Speech::SP0256::Allophone;
 use Speech::SP0256::Dictionary;
 use Speech::SP0256::Rules;
@@ -54,6 +54,11 @@ sub new{
 
 }
 
+sub debug{
+	my ($self, $debug)=@_;
+	$self->{debug}=$debug?1:0;
+}
+
 sub utter{
 	my ($self,$ap)=@_;
 	my @sounds=split(/[^a-zA-Z0-9]+/,uc $ap);
@@ -61,7 +66,7 @@ sub utter{
 		$self->start();; 
 	}
 	foreach my $sound(@sounds){
-		print $sound," ";
+		print $sound," " if $self->{debug};
 		next unless $self->{allophones}->{$sound};  # ignore sounds that are not available
 		my $b=$self->{allophones}->{$sound}->{s};
 		while (length $b){$b=substr $b,syswrite $dsp,$b};
@@ -87,13 +92,16 @@ sub speak{
 
 sub tts{
 	my ($self,$word)=@_;
-	if ($word=~/\/([A-Z]{2}\d?)\//){return $1};
-	my $result=lc $word;
-	if (defined $self->{dic}->{$result}){
+	if ($word=~/\/([A-Z]{2}\d?)\//){return $1};    # Direct Allophone output
+	my $result=lc $word;             
+	if (defined $self->{dic}->{$result}){          # Word is in dictionary
 		$result= $self->{dic}->{$result} 
 	}
+	elsif($word=~/^\d+$/){
+		$result=$self->numberSpeak($word); 
+	}
 	else{
-		foreach my $rule (@{$self->{rules}}){
+		foreach my $rule (@{$self->{rules}}){      # Build word from set of rules
 			my ($match,$replace)=@$rule;
 			if ($result=~/$match/){
 				$result=~s/$match/ $replace /g;	
@@ -106,6 +114,31 @@ sub tts{
 	return $result;
 }
 
+sub numberSpeak{
+	my ($self,$number)=@_;
+	my $split=numberSplit(1*$number);
+	print $split,"\n" if $self->{debug};
+	my $inWords="";
+	foreach (split " ",$split){
+		$inWords.=$self->tts($_);
+		$inWords.=" PA4 "
+	}
+	return $inWords;
+	
+}
+
+sub numberSplit{
+	my $number=shift;
+	return "0" if ($number== 0);
+    if ($number < 0){ return "minus " . numberSplit(-$number)};
+    if ($number >= 1000000000){ return numberSplit(int($number / 1000000000)) . " 1000000000 " . numberSplit($number % 1000000000)};
+    if ($number >= 1000000){ return numberSplit(int($number / 1000000)) . " 1000000 " . numberSplit($number % 1000000)};
+    if ($number >= 1000){ return numberSplit(int($number / 1000)) . " 1000 " . numberSplit($number % 1000)};
+    if ($number >= 100){ return numberSplit(int($number / 100)) . " 100 " . numberSplit($number % 100)};
+    if ($number >= 20){ return (10*int($number/10))." ".($number%10) };
+    return $number if $number;
+    return "";
+}
 
 
 
