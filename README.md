@@ -17,3 +17,6 @@ This modulino includes a transformation engine that translates text to allophone
 [Original ROMs](https://k1.spdns.de/Vintage/Sinclair/82/Peripherals/Currah%20uSpeech/Technical%20Information/)
 
 [Allophonic Rules](https://youtu.be/vaRTzIoEp9k)
+
+[Software waveforms](https://swphonetics.com/praat/tutorials/understanding-waveforms/speech-waveforms)
+
