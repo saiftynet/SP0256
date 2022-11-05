@@ -3,6 +3,10 @@ Allophone speech synthesis in Pure Perl. Multiple methods of getting Perl applic
 
 This modulino includes a transformation engine that translates text to allophones.  
 
+### Changes 
+
+* version 0.03 has an experimental Windows version requiring Win32::Sound 
+
 ### References
 [Sample rate conversion](https://www.psaudio.com/copper/article/sample-rate-conversion/)
 
