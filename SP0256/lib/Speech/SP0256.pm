@@ -30,17 +30,23 @@ unless (caller){
 package Speech::SP0256;
 use strict; use warnings;
 use lib "../../lib";
-our $VERSION=0.02;
+our $VERSION=0.03;
 use Speech::SP0256::Allophone;
 use Speech::SP0256::Dictionary;
 use Speech::SP0256::Rules;
 use Storable;
+use if $^O eq 'MSWin32', "Win32::Sound";
 
 our $dsp;
 
 sub start{
 	my $self=shift;
-	open(our $dsp,"|padsp tee /dev/dsp > /dev/null") or warn "DSP can not be intiated $!"; 
+	if ($^O eq 'MSWin32'){
+	   our $dsp = new Win32::Sound::WaveOut(8000, 8, 1);
+	} 
+	else{
+	   open(our $dsp,"|padsp tee /dev/dsp > /dev/null") or warn "DSP can not be intiated $!";
+    }	   
 }
 
 sub new{
@@ -69,7 +75,14 @@ sub utter{
 		print $sound," " if $self->{debug};
 		next unless $self->{allophones}->{$sound};  # ignore sounds that are not available
 		my $b=$self->{allophones}->{$sound}->{s};
-		while (length $b){$b=substr $b,syswrite $dsp,$b};
+		if ($^O eq 'MSWin32'){
+		   $dsp->Load($b);       # get it
+		   $dsp->Write();           # hear it
+	    } 
+		else{
+	       while (length $b){$b=substr $b,syswrite $dsp,$b};
+        }
+		
 	}
 #	print "\n";
 }
