@@ -24,3 +24,5 @@ This modulino includes a transformation engine that translates text to allophone
 
 [Software waveforms](https://swphonetics.com/praat/tutorials/understanding-waveforms/speech-waveforms)
 
+[Waveforms of Speech](https://www.mq.edu.au/about/about-the-university/our-faculties/medicine-and-health-sciences/departments-and-centres/department-of-linguistics/our-research/phonetics-and-phonology/speech/acoustics/speech-waveforms/the-waveforms-of-speech) by [Robert Mannell](https://www.researchgate.net/profile/Robert-Mannell-2) at MacQuarie University
+
