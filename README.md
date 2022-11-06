@@ -3,6 +3,16 @@ Allophone speech synthesis in Pure Perl. Multiple methods of getting Perl applic
 
 This modulino includes a transformation engine that translates text to allophones.  
 
+[SP0256.webm](https://user-images.githubusercontent.com/34284663/199564715-6f7166c4-04fb-4ff9-876b-60613887959c.webm)
+
+The allophones are rather distorted, and the source I used (from a Github repo of ExtremeEectronis) appears to be also derived from an innaccurate source acording to the author.  It would be an idea to evaluate how different from natural sounds these allophones are, certainly there are allophones in thgis set that, at least to my ear do not sound quite the way one might expect.  Hence a console based audio analyser...
+
+[AudioAnalyser.webm](https://user-images.githubusercontent.com/34284663/200185500-67eed845-cce0-4195-b6c1-81937a972edf.webm)
+
+### DISCLAIMER
+
+I am not a expert in phonetics, linguistics or audio data analysis.  I also happen to be more tone deaf than an earwig with no ears.  So apologies for any offense I cause with my lac of knowledge and insight in this field.
+
 ### Changes 
 
 * version 0.03 has an experimental Windows version requiring Win32::Sound 
