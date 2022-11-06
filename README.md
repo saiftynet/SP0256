@@ -7,7 +7,7 @@ This modulino includes a transformation engine that translates text to allophone
 
 * version 0.03 has an experimental Windows version requiring Win32::Sound 
 
-### References
+### Reading List
 [Sample rate conversion](https://www.psaudio.com/copper/article/sample-rate-conversion/)
 
 [A Source of C  Allophone data](https://github.com/ExtremeElectronics/SP0256-AL2-Pico-Emulation-Detail)  This is derived form a source which is known to be innaccurate;  a more accurate allophone set would be nice
