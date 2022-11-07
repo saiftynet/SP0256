@@ -1,4 +1,4 @@
-7# SP0256
+# SP0256
 Allophone speech synthesis in Pure Perl. Multiple methods of getting Perl applications to speak are available.  As far as I can tell all use external libraries to do the heavy lifting. I want to try and implement one with near-zero external dependencies, mainly for simple recognisable speech audio in games etc. Thought I'd start with the classic SP0256 chip as a starting point in this exploration. 
 
 This modulino includes a transformation engine that translates text to allophones.  
